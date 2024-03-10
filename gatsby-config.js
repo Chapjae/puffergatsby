@@ -11,6 +11,18 @@ module.exports = {
     'gatsby-plugin-image',
     'gatsby-plugin-mdx',
     'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          'gatsby-remark-relative-images',
+          {
+            resolve: 'gatsby-remark-images',
+            options: {},
+          },
+        ],
+      },
+    },
     'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-source-filesystem',
@@ -27,6 +39,13 @@ module.exports = {
         path: './src/pages/',
       },
       __key: 'pages',
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'content',
+        path: './src/content',
+      },
     },
   ],
 };
