@@ -1,16 +1,12 @@
 const path = require('path');
 
-exports.createPage = async ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions }) => {
   const { data } = await graphql(`
     query Rooms {
       allMarkdownRemark {
-        nodes
-        frontmatter {
-          roomName
-          featuredImage {
-            childImageSharp {
-              gatsbyImageData(width: 800)
-            }
+        nodes {
+          frontmatter {
+            slug
           }
         }
       }
@@ -19,9 +15,9 @@ exports.createPage = async ({ graphql, actions }) => {
 
   data.allMarkdownRemark.nodes.forEach((node) => {
     actions.createPage({
-      path: '/projects/' + node.frontmatter.roomName,
+      path: '/booking/' + node.frontmatter.slug,
       component: path.resolve('./src/templates/room-details.js'),
-      context: { roomName: node.frontmatter.roomName },
+      context: { slug: node.frontmatter.slug },
     });
   });
 };

@@ -1,5 +1,5 @@
 ---
-roomName: moreleaves
+slug: moreleaves
 featuredImage: ../images/rooms/moreleaves.jpg
 pricePerNight: $50
 ---

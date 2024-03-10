@@ -1,38 +1,41 @@
 import React from 'react';
 import Layout from '../components/Layout';
 import { graphql } from 'gatsby';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
+import '../styles/global.css';
 
-export default function RoomDetails() {
-  let post = data.markdownRemark;
-  let featuredImg = getImage(
-    post.frontmatter.featuredImg?.childImageSharp?.gatsbyImageData,
-  );
-
+export default function RoomDetails({ data }) {
+  const { html } = data.markdownRemark;
+  const { slug, pricePerNight, featuredImage } =
+    data.markdownRemark.frontmatter;
+  console.log(data);
   return (
     <Layout>
       <div>
-        <h2>Title</h2>
-        <h3>Stack</h3>
-        <GatsbyImage image={featuredImg} />
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <h2>{slug}</h2>
+        <h3>{pricePerNight}</h3>
+        <div>
+          <GatsbyImage image={featuredImage.childImageSharp.gatsbyImageData} />
+        </div>
+        <div dangerouslySetInnerHTML={{ __html: html }} />
       </div>
     </Layout>
   );
 }
 
-// export const query = graphql`
-//   query PostQuery($id: String) {
-//     markdownRemark(id: { eq: $id }) {
-//       html
-//       frontmatter {
-//         title
-//         featuredImage {
-//           childImageSharp {
-//             gatsbyImageData(width: 800)
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
+export const query = graphql`
+  query RoomDetails($slug: String) {
+    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
+      html
+      frontmatter {
+        featuredImage {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+        pricePerNight
+        slug
+      }
+    }
+  }
+`;

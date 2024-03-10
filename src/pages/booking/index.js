@@ -17,11 +17,11 @@ export default function Fanroom({ data }) {
 
           <div className='mt-6 overflow-x-auto'>
             {rooms.map((room, index) => (
-              <Link to={'/booking/' + room.frontmatter.roomName} key={room.id}>
+              <Link to={'/booking/' + room.frontmatter.slug} key={room.id}>
                 <div key={index} className='inline-block mr-4 max-w-xs'>
                   <div className='group relative'>
                     <h2 className='text-2xl tracking-tight text-gray-900'>
-                      {room.frontmatter.roomName}
+                      {room.frontmatter.slug}
                     </h2>
                     <div className='aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80'>
                       <GatsbyImage
@@ -58,11 +58,11 @@ export default function Fanroom({ data }) {
 }
 
 export const query = graphql`
-  query MyQuery {
-    allMarkdownRemark(filter: {}) {
+  query AllRooms {
+    allMarkdownRemark {
       nodes {
         frontmatter {
-          roomName
+          slug
           pricePerNight
           featuredImage {
             childImageSharp {
