@@ -1,7 +1,11 @@
 ---
 slug: tropicalleaf
-featuredImage: ../images/rooms/tropicalleaf.jpg
 pricePerNight: $25
+
+featuredImage: ../images/rooms/tropicalleaf.jpg
+
+images:
+
 highlights:
   - Up to 3 guests
   - Beachside

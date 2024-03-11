@@ -31,6 +31,7 @@ export default function Fanroom({ data }) {
                         }
                         alt={`Room ${index + 1}`}
                         className='h-full w-full object-cover object-center lg:h-full lg:w-full rounded-md'
+                        style={{ position: 'relative', zindex: '1' }}
                       />
                     </div>
                     <div className='mt-2 mb-6 flex justify-between'>
@@ -58,25 +59,18 @@ export default function Fanroom({ data }) {
 }
 
 export const query = graphql`
-  query AllRooms {
+  query Rooms {
     allMarkdownRemark {
       nodes {
         frontmatter {
-          slug
           pricePerNight
+          slug
           featuredImage {
             childImageSharp {
-              gatsbyImageData(
-                width: 350
-                height: 350
-                layout: FIXED
-                placeholder: BLURRED
-                formats: AUTO
-              )
+              gatsbyImageData
             }
           }
         }
-        id
       }
     }
   }

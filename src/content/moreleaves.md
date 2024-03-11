@@ -1,7 +1,12 @@
 ---
 slug: moreleaves
-featuredImage: ../images/rooms/moreleaves.jpg
 pricePerNight: $50
+featuredImage: ../images/rooms/moreleaves.jpg
+
+images:
+  - imageSrc: ../images/rooms/moreleavesImg2.jpg
+  - imageSrc: ../images/rooms/moreleavesoutside.jpg
+
 highlights:
   - Up to 4 guests
   - Beachside

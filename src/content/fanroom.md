@@ -1,7 +1,9 @@
 ---
 slug: fanroom
 pricePerNight: $100
+
 featuredImage: ../images/rooms/fanroom.jpg
+
 images:
   - imageSrc: ../images/rooms/fanroomImg2.jpg
   - imageSrc: ../images/rooms/fanroomImg3.jpg

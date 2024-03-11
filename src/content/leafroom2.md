@@ -1,7 +1,11 @@
 ---
 slug: leafroom2
-featuredImage: ../images/rooms/leafroom2.jpg
 pricePerNight: $75
+featuredImage: ../images/rooms/leafroom2.jpg
+
+images:
+  - imageSrc: ../images/rooms/leafroomImg2.jpg
+
 highlights:
   - Up to 5 guests
   - Not beachside
