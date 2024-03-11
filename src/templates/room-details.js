@@ -7,7 +7,7 @@ import '../styles/global.css';
 export default function RoomDetails({ data }) {
   console.log(data);
   const { html } = data.markdownRemark;
-  const { slug, pricePerNight, featuredImage } =
+  const { slug, pricePerNight, featuredImage, images, highlights } =
     data.markdownRemark.frontmatter;
 
   return (
@@ -22,9 +22,36 @@ export default function RoomDetails({ data }) {
                 className='h-full w-full object-cover object-center'
               />
             </div>
+
+            <div className='hidden lg:grid lg:grid-cols-1 lg:gap-y-8'>
+              <div className='aspect-h-2 aspect-w-3 overflow-hidden rounded-lg'>
+                <GatsbyImage
+                  image={
+                    images[0].imageSrc.childrenImageSharp[0].gatsbyImageData
+                  }
+                  alt={''}
+                  className='h-full w-full object-cover object-center'
+                />
+              </div>
+              <div className='aspect-h-2 aspect-w-3 overflow-hidden rounded-lg'>
+                <GatsbyImage
+                  image={
+                    images[1].imageSrc.childrenImageSharp[0].gatsbyImageData
+                  }
+                  alt={''}
+                  className='h-full w-full object-cover object-center'
+                />
+              </div>
+            </div>
+            <div className='aspect-h-5 aspect-w-4 lg:aspect-h-4 lg:aspect-w-3 sm:overflow-hidden sm:rounded-lg'>
+              <GatsbyImage
+                image={images[2].imageSrc.childrenImageSharp[0].gatsbyImageData}
+                alt={''}
+                className='h-full w-full object-cover object-center'
+              />
+            </div>
           </div>
         </div>
-
         {/* Product info */}
         <div className='mx-auto max-w-2xl px-4 pb-16 pt-10 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pb-24 lg:pt-16'>
           <div className='lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8'>
@@ -55,7 +82,9 @@ export default function RoomDetails({ data }) {
               <h3 className='sr-only'>Description</h3>
 
               <div className='space-y-6'>
-                <p className='text-base text-gray-900'>{html}</p>
+                <p
+                  className='text-base text-gray-900'
+                  dangerouslySetInnerHTML={{ __html: html }}></p>
               </div>
             </div>
 
@@ -63,9 +92,13 @@ export default function RoomDetails({ data }) {
               <h3 className='text-sm font-medium text-gray-900'>Highlights</h3>
 
               <div className='mt-4'>
-                <ul
-                  role='list'
-                  className='list-disc space-y-2 pl-4 text-sm'></ul>
+                <ul className='list-disc space-y-2 pl-4 text-sm'>
+                  {highlights.map((highlight) => (
+                    <li key={highlight} className='text-gray-400'>
+                      <span className='text-gray-600'>{highlight}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
@@ -118,14 +151,37 @@ export const query = graphql`
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       html
       frontmatter {
+        pricePerNight
+        slug
+        highlights
+        images {
+          imageSrc {
+            relativePath
+            childrenImageSharp {
+              gatsbyImageData
+            }
+          }
+        }
         featuredImage {
           childImageSharp {
             gatsbyImageData
           }
         }
-        pricePerNight
-        slug
       }
     }
   }
 `;
+
+//     html
+//     frontmatter {
+//       featuredImage {
+//         childImageSharp {
+//           gatsbyImageData
+//         }
+//       }
+//       pricePerNight
+//       slug
+//       highlights
+//     }
+//   }
+// }
