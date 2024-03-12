@@ -353,49 +353,7 @@ export default function RoomDetails({ data }) {
       );
   }
 
-  return (
-    <Layout>
-      {layout}
-      {/* <div>
-        <h2 className='product capitalize text-very-dark-blue font-bold text-3xl sm:text-4xl sm:leading-none pb-3'>
-          {slug} <span className='block lg:mt-1'></span>
-        </h2>
-        <p className='text-dark-grayish-blue pb-6 lg:py-7 lg:leading-6'>
-          {html}
-        </p>
-        <div className='amount font-bold flex items-center justify-between lg:flex-col lg:items-start mb-6'>
-          <div className='discount-price items-center flex'>
-            <div className='price text-3xl'>{pricePerNight}</div>
-          </div>
-        </div>
-        <div className='sm:flex lg:mt-8 w-full'>
-          <div className='quantity-container w-full bg-light-grayish-blue rounded-lg h-14 mb-4 flex items-center justify-between px-6 lg:px-3 font-bold sm:mr-3 lg:mr-5 lg:w-1/3'>
-            <input
-              className='quantity focus:outline-none text-dark-blue bg-light-grayish-blue font-bold flex text-center w-full'
-              type='number'
-              name='quantity'
-              aria-label='quantity number'
-            />
-          </div>
-
-          <button className='cart w-full h-14 bg-orange rounded-lg lg:rounded-xl mb-2 shadow-orange-shadow shadow-2xl text-white flex items-center justify-center lg:w-3/5 hover:opacity-60'>
-            <i className='cursor-pointer text-white text-xl leading-0 pr-3'>
-              <ion-icon name='cart-outline'></ion-icon>
-            </i>
-            Book This Room
-          </button>
-        </div>
-      </div> */}
-      {/* <div>
-        <h2>{slug}</h2>
-        <h3>{pricePerNight}</h3>
-        <div>
-          <GatsbyImage image={featuredImage.childImageSharp.gatsbyImageData} />
-        </div>
-        <div dangerouslySetInnerHTML={{ __html: html }} />
-      </div> */}
-    </Layout>
-  );
+  return <Layout>{layout}</Layout>;
 }
 
 export const query = graphql`
