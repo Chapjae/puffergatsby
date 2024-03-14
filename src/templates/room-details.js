@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from '../components/Layout';
 import { graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import '../styles/global.css';
 
 export default function RoomDetails({ data }) {
+  // const [count, setCount] = useState(0);
   const { html } = data.markdownRemark;
   const { slug, pricePerNight, featuredImage, images, highlights } =
     data.markdownRemark.frontmatter;
@@ -312,6 +313,29 @@ export default function RoomDetails({ data }) {
               </p>
 
               <form className='mt-10'>
+                <div className='sm:flex lg:mt-8 w-full'>
+                  {/* <div className='quantity-container w-full bg-light-grayish-blue rounded-lg h-14 mb-4 flex items-center justify-between px-6 lg:px-3 font-bold sm:mr-3 lg:mr-5 lg:w-1/3'>
+                    <button
+                      className='text-orange text-2xl leading-none font-bold mb-1 lg:mb-2 lg:text-3xl hover:opacity-60'
+                      onClick={() => setCount(count - 1)}>
+                      -
+                    </button>
+                    <input
+                      min={0}
+                      max={100}
+                      className='quantity focus:outline-none text-dark-blue bg-light-grayish-blue font-bold flex text-center w-full'
+                      type='number'
+                      name='quantity'
+                      aria-label='quantity number'
+                    />
+                    <span>{count}</span>
+                    <button
+                      className='text-orange text-2xl leading-none font-bold mb-1 lg:mb-2 lg:text-3xl hover:opacity-60'
+                      onClick={() => setCount(count + 1)}>
+                      +
+                    </button>
+                  </div> */}
+                </div>
                 <button
                   type='submit'
                   className='mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'>
