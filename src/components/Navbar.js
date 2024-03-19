@@ -42,7 +42,7 @@ export default function Example() {
               <div className='flex flex-1 items-center justify-center sm:items-stretch sm:justify-start'>
                 <div className='flex flex-shrink-0 items-center'>
                   <img
-                    className='h-12 w-12 rounded-full'
+                    className='h-12 w-12 rounded-full md:justify-left sm:justify-left'
                     src={puffer}
                     alt='Puffer Mascot'
                   />

@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Layout from '../components/Layout';
 import { graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import '../styles/global.css';
+import Trip from '../images/logos/tripadvisorbutton.jpg';
+import Booking from '../images/logos/booking.png';
+import Airbnb from '../images/logos/airbnb.png';
 
 export default function RoomDetails({ data }) {
   // const [count, setCount] = useState(0);
@@ -259,14 +262,14 @@ export default function RoomDetails({ data }) {
           <div className='pt-6'>
             {/* Image gallery */}
             <div className='mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8'>
-              <div className='aspect-h-4 aspect-w-3 hidden overflow-hidden rounded-lg lg:block'>
+              <div className='aspect-h-4 aspect-w-3 overflow-hidden rounded-lg lg:block'>
                 <GatsbyImage
                   image={featuredImage.childImageSharp.gatsbyImageData}
                   className='h-full w-full object-cover object-center'
                 />
               </div>
 
-              <div className='hidden lg:grid lg:grid-cols-1 lg:gap-y-8'>
+              <div className='lg:grid lg:grid-cols-1 lg:gap-y-8'>
                 <div className='aspect-h-2 aspect-w-3 overflow-hidden rounded-lg'>
                   <GatsbyImage
                     image={
@@ -312,36 +315,39 @@ export default function RoomDetails({ data }) {
                 {pricePerNight} per Night
               </p>
 
-              <form className='mt-10'>
-                <div className='sm:flex lg:mt-8 w-full'>
-                  {/* <div className='quantity-container w-full bg-light-grayish-blue rounded-lg h-14 mb-4 flex items-center justify-between px-6 lg:px-3 font-bold sm:mr-3 lg:mr-5 lg:w-1/3'>
-                    <button
-                      className='text-orange text-2xl leading-none font-bold mb-1 lg:mb-2 lg:text-3xl hover:opacity-60'
-                      onClick={() => setCount(count - 1)}>
-                      -
-                    </button>
-                    <input
-                      min={0}
-                      max={100}
-                      className='quantity focus:outline-none text-dark-blue bg-light-grayish-blue font-bold flex text-center w-full'
-                      type='number'
-                      name='quantity'
-                      aria-label='quantity number'
+              <div className='mt-10'>
+                <div className='sm:flex lg:mt-8 w-full'></div>
+                <a href='https://www.tripadvisor.com/Hotel_Review-g4055401-d24093034-Reviews-Puffer_Isle_Inn-Dingalan_Aurora_Province_Central_Luzon_Region_Luzon.html'>
+                  <button className='relative mt-10 flex w-full items-center justify-left rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'>
+                    <img
+                      className='static h-10 rounded-full mr-10'
+                      src={Trip}
+                      alt='tripadvisor'
                     />
-                    <span>{count}</span>
-                    <button
-                      className='text-orange text-2xl leading-none font-bold mb-1 lg:mb-2 lg:text-3xl hover:opacity-60'
-                      onClick={() => setCount(count + 1)}>
-                      +
-                    </button>
-                  </div> */}
-                </div>
-                <button
-                  type='submit'
-                  className='mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'>
-                  Book This Room!
-                </button>
-              </form>
+                    Book with Trip Advisor.com
+                  </button>
+                </a>
+                <a href='https://www.airbnb.com/rooms/838597716497615688?source_impression_id=p3_1710810107_vvZgE4nFPga51e%2Ff'>
+                  <button className='mt-5 flex w-full items-center justify-left rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'>
+                    <img
+                      className='h-10 rounded-full mr-10'
+                      src={Airbnb}
+                      alt='airbnb'
+                    />
+                    Book with Airbnb.com
+                  </button>
+                </a>
+                <a href='https://www.booking.com/hotel/ph/puffer-isle-resort.en-gb.html?aid=356980&label=gog235jc-1DCAsotAFCEnB1ZmZlci1pc2xlLXJlc29ydEgzWANoiQKIAQGYAQm4ARfIAQzYAQPoAQGIAgGoAgO4ArPH468GwAIB0gIkYmNjYjljM2ItNGUzOS00YTQ1LWExZmUtMTdkMTcxODZkOGIz2AIE4AIB&sid=6bb1421e32425ee7c79a20ca2da67bc3&dist=0&group_adults=2&group_children=0&keep_landing=1&no_rooms=1&sb_price_type=total&type=total&'>
+                  <button className='mt-5 flex w-full items-center justify-left rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'>
+                    <img
+                      className='h-10 rounded-full mr-10'
+                      src={Booking}
+                      alt='booking'
+                    />
+                    Book with Booking.com
+                  </button>
+                </a>
+              </div>
             </div>
 
             <div className='py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pr-8 lg:pt-6'>
@@ -405,20 +411,3 @@ export const query = graphql`
     }
   }
 `;
-
-//  html
-//       frontmatter {
-//         pricePerNight
-//         slug
-//         highlights
-//         images {
-//           imageSrc {
-//             relativePath
-//             childrenImageSharp {
-//               gatsbyImageData
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }

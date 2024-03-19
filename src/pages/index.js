@@ -35,7 +35,7 @@ const Home = () => {
                   Your vacation is a click away!
                 </h2>
                 <p className='mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>
-                  Welcome to Puffer Isle Inn!
+                  Welcome to Puffer Isle Resort!
                 </p>
                 <p className='mt-6 text-lg leading-8 text-gray-600'>
                   Puffer Isle is the bestest resort in Ding-ling-dong
@@ -73,4 +73,4 @@ const Home = () => {
 
 export default Home;
 
-export const Head = () => <title>Puffer Isle Inn</title>;
+export const Head = () => <title>Puffer Isle Resort</title>;

@@ -15,7 +15,7 @@ export default function Fanroom({ data }) {
             Choose a Room:
           </h1>
 
-          <div className='mt-6 overflow-x-auto'>
+          <div className='mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8'>
             {rooms.map((room, index) => (
               <Link to={'/booking/' + room.frontmatter.slug} key={room.id}>
                 <div key={index} className='inline-block mr-4 max-w-xs'>
