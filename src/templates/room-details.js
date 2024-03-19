@@ -270,34 +270,32 @@ export default function RoomDetails({ data }) {
               </div>
 
               <div className='lg:grid lg:grid-cols-1 lg:gap-y-8'>
-                <div className='aspect-h-2 aspect-w-3 overflow-hidden rounded-lg'>
-                  <GatsbyImage
-                    image={
-                      images[0].imageSrc.childrenImageSharp[0].gatsbyImageData
-                    }
-                    alt={''}
-                    className='h-full w-full object-cover object-center'
-                  />
-                </div>
-                <div className='aspect-h-2 aspect-w-3 overflow-hidden rounded-lg'>
-                  <GatsbyImage
-                    image={
-                      images[1].imageSrc.childrenImageSharp[0].gatsbyImageData
-                    }
-                    alt={''}
-                    className='h-full w-full object-cover object-center'
-                  />
-                </div>
-              </div>
-              <div className='aspect-h-5 aspect-w-4 lg:aspect-h-4 lg:aspect-w-3 sm:overflow-hidden sm:rounded-lg'>
+                {/* <div className='aspect-h-2 aspect-w-3 overflow-hidden rounded-lg'> */}
                 <GatsbyImage
                   image={
-                    images[2].imageSrc.childrenImageSharp[0].gatsbyImageData
+                    images[0].imageSrc.childrenImageSharp[0].gatsbyImageData
                   }
                   alt={''}
-                  className='h-full w-full object-cover object-center'
+                  className='h-full w-full object-cover object-center aspect-h-2 aspect-w-3 overflow-hidden rounded-lg'
                 />
+                {/* </div> */}
+                {/* <div className='aspect-h-2 aspect-w-3 overflow-hidden rounded-lg'> */}
+                <GatsbyImage
+                  image={
+                    images[1].imageSrc.childrenImageSharp[0].gatsbyImageData
+                  }
+                  alt={''}
+                  className='h-full w-full object-cover object-center aspect-h-2 aspect-w-3 overflow-hidden rounded-lg'
+                />
+                {/* </div> */}
               </div>
+              {/* <div className='aspect-h-5 aspect-w-4 lg:aspect-h-4 lg:aspect-w-3 sm:overflow-hidden sm:rounded-lg'> */}
+              <GatsbyImage
+                image={images[2].imageSrc.childrenImageSharp[0].gatsbyImageData}
+                alt={''}
+                className='h-full w-full object-cover object-center aspect-h-5 aspect-w-4 lg:aspect-h-4 lg:aspect-w-3 sm:overflow-hidden sm:rounded-lg'
+              />
+              {/* </div> */}
             </div>
           </div>
           {/* Product info */}
