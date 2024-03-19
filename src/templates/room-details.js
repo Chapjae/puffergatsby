@@ -3,7 +3,7 @@ import Layout from '../components/Layout';
 import { graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import '../styles/global.css';
-import Trip from '../images/logos/tripadvisorbutton.jpg';
+import FaceBook from '../images/logos/fblogo.png';
 import Booking from '../images/logos/booking.png';
 import Airbnb from '../images/logos/airbnb.png';
 
@@ -315,14 +315,14 @@ export default function RoomDetails({ data }) {
 
               <div className='mt-10'>
                 <div className='sm:flex lg:mt-8 w-full'></div>
-                <a href='https://www.tripadvisor.com/Hotel_Review-g4055401-d24093034-Reviews-Puffer_Isle_Inn-Dingalan_Aurora_Province_Central_Luzon_Region_Luzon.html'>
+                <a href='https://www.facebook.com/PufferIsleInn'>
                   <button className='relative mt-10 flex w-full items-center justify-left rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'>
                     <img
                       className='static h-10 rounded-full mr-10'
-                      src={Trip}
+                      src={FaceBook}
                       alt='tripadvisor'
                     />
-                    Book with Trip Advisor.com
+                    Say Hi on FaceBook!
                   </button>
                 </a>
                 <a href='https://www.airbnb.com/rooms/838597716497615688?source_impression_id=p3_1710810107_vvZgE4nFPga51e%2Ff'>
