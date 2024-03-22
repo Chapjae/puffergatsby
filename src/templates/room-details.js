@@ -20,7 +20,7 @@ export default function RoomDetails({ data }) {
       layout = (
         <div className='bg-white'>
           <div className='pt-6'>
-            <div className='mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8'>
+            <div className='mx-auto mt-6 md:max-w-md sm:px-6 lg:grid lg:max-w-lg lg:grid-cols-1 lg:gap-x-8 lg:px-8'>
               <GatsbyImage
                 image={featuredImage.childImageSharp.gatsbyImageData}
                 className='h-full w-full object-cover object-center aspect-h-4 aspect-w-3 hidden overflow-hidden rounded-lg lg:block'
@@ -48,7 +48,7 @@ export default function RoomDetails({ data }) {
                       <img
                         className='static h-10 rounded-full mr-10'
                         src={FaceBook}
-                        alt='tripadvisor'
+                        alt='facebook'
                       />
                       Say Hi on FaceBook!
                     </button>
@@ -112,7 +112,7 @@ export default function RoomDetails({ data }) {
       layout = (
         <div className='bg-white'>
           <div className='pt-6'>
-            <div className='mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8'>
+            <div className='mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-4xl lg:grid-cols-2 lg:gap-x-8 lg:px-8'>
               <GatsbyImage
                 image={featuredImage.childImageSharp.gatsbyImageData}
                 className='h-full w-full object-cover object-center aspect-h-4 aspect-w-3 hidden overflow-hidden rounded-lg lg:block'
@@ -150,7 +150,7 @@ export default function RoomDetails({ data }) {
                       <img
                         className='static h-10 rounded-full mr-10'
                         src={FaceBook}
-                        alt='tripadvisor'
+                        alt='facebook'
                       />
                       Say Hi on FaceBook!
                     </button>
@@ -215,7 +215,7 @@ export default function RoomDetails({ data }) {
       layout = (
         <div className='bg-white'>
           <div className='pt-6'>
-            <div className='mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8'>
+            <div className='mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-4xl lg:grid-cols-2 lg:gap-x-8 lg:px-8'>
               <GatsbyImage
                 image={featuredImage.childImageSharp.gatsbyImageData}
                 className='h-full w-full object-cover object-center aspect-h-4 aspect-w-3 hidden overflow-hidden rounded-lg lg:block'
@@ -261,7 +261,7 @@ export default function RoomDetails({ data }) {
                       <img
                         className='static h-10 rounded-full mr-10'
                         src={FaceBook}
-                        alt='tripadvisor'
+                        alt='facebook'
                       />
                       Say Hi on FaceBook!
                     </button>
@@ -378,7 +378,7 @@ export default function RoomDetails({ data }) {
                     <img
                       className='static h-10 rounded-full mr-10'
                       src={FaceBook}
-                      alt='tripadvisor'
+                      alt='facebook'
                     />
                     Say Hi on FaceBook!
                   </button>
