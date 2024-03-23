@@ -13,7 +13,6 @@ const navigation = [
   { name: 'Booking', href: '/booking', current: false },
   { name: 'Photos', href: '/photos', current: false },
   { name: 'Area', href: '/area', current: false },
-  { name: 'Contact', href: '/contact', current: false },
 ];
 
 function classNames(...classes) {
